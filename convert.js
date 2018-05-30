@@ -12,7 +12,7 @@ const convertFile = (filename = 'customer-data.csv') => {
   .then((jsonObj) => {
     try {
       let basename = path.basename(filename, '.csv');
-      fs.writeFileSync(basename + '.json', JSON.stringify(jsonObj));
+      fs.writeFileSync(basename + '.json', JSON.stringify(jsonObj, null, 2));
       console.log('conversion is done');
     } catch(error) {
       console.error(error);
